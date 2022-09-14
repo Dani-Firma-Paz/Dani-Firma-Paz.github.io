@@ -197,6 +197,45 @@ debemos usar una propiedad llamada fill que proporciona color o relleno.*/
     }
 }
 
+/********* MODAL ***********/
+.modal {
+    position: fixed;
+    z-index: 999; /*Contenido alto para que siempre esté sobre cualquier contenido*/
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;  /*Los 4 lados en 0 hacen que el contenido se estire y lo obliga a que ocupe toda la pantalla.*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-alpha-color);
+    opacity: 0; /*La ventana modal tiene que estar con una opacidad de 0*/
+    pointer-events: none;
+    transition: all 1s;
+}
+
+.modal-content {
+    position: relative;
+    right: 1rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+}
+
+.modal-close svg {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--first-color);
+}
+
+/*Estos estilos van a aplicar cuando el target de la página esté en en ID interno*/
+.modal[id|="trabajo"]:target {
+    opacity: 1; /*La ventana modal tiene que estar con una opacidad de 0*/
+    pointer-events: auto;
+}
+
 /********* PROGRESS BAR ***********/
 progress {
     width: 100%;
@@ -228,6 +267,9 @@ progress::-moz-progress-bar {
 }
 
 /********* UTILITIES ***********/
+.bg-gray-light {
+    background-color: var(--gray-light-color);
+}
 
 .box-shadow-1 {
     box-shadow: 0.25rem 0.25rem 1rem rgb(0, 0, 0, 0.25);
@@ -261,6 +303,18 @@ progress::-moz-progress-bar {
 
 .section {
     padding: 2rem 1rem;
+
+}
+
+.section-title {
+    border-top: thin solid var(--first-color);
+    border-bottom: thin solid var(--first-color);
+    width: 250px;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    color: var(--title-color)
+
 
 }
 
@@ -332,10 +386,85 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
     text-decoration: none;
 }
 
+.portfolio-card {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ /*Propiedad de las imágenes para que si mis imágenes son rectangulares o desiguales
+    entre sí, no se me deforme o se pierda la proporción de la imagen y solucionado que se pierda el aspecto.*/
+}
+
+.portfolio-card-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--first-alpha-color);
+    color: var(--white-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out; 
+}
+
+.portfolio-card:hover .portfolio-card-info {
+    opacity: 1;
+    pointer-events: auto;
+    }
+
+.portfolio-card-info > div {
+    padding: 1rem;
+    border: thin solid var(--white-color);
+    width: 100%;
+    height: 100%;
+}
+
+.certification-card {
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center; 
+}
+
+.certification-card h3 {
+    color: var(--title-color);
+}
+.certification-card svg {
+    margin-bottom: 1.25rem;
+    fill: var(--first-color);
+}
+
+
 /*Para cuando el dispositivo sea pantalla y cuando la mínima altura sea 768px*/
 @media screen and (min-width:768px) {  
+    .portfolio > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
 
+    .portfolio .section-title {
+        grid-column: span 2;
+    }
+
+    .certifications > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        justify-content: space-between;
+        align-content: center;
+    }  
+
+    .certifications .section-title {
+        grid-column: span 2; /*propiedad para hacer desplazar la clase dos celdas o la cantidad que sea.*/
+    }
 }
+
 
 @media screen and (min-width:1024px) {
     .about {
@@ -344,12 +473,27 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
         justify-content: space-between;
         align-content: center;
     }
- }
-
     .header {
         position: sticky; /*Es una mezcla entre el posicionamiento relativo y fijo*/
         top: 0; /*Cuando toque el top 0 se va a volver fijo*/
         padding: 0.5rem;
         height: calc(var(--header-height) - 0.5rem);
+        }
+
+        .portfolio > .container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    
+        .portfolio .section-title {
+            grid-column: span 3;
+        }
+
+        .certifications > .container {
+            grid-template-columns: repeat(3, 30%);
+        }
+    
+        .certifications .section-title {
+            grid-column: span 3;
     }
 
+}
