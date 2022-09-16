@@ -222,6 +222,7 @@ debemos usar una propiedad llamada fill que proporciona color o relleno.*/
 .modal-close {
     position: absolute;
     top: 1rem;
+    right: 1rem;
 }
 
 .modal-close svg {
@@ -231,8 +232,9 @@ debemos usar una propiedad llamada fill que proporciona color o relleno.*/
 }
 
 /*Estos estilos van a aplicar cuando el target de la página esté en en ID interno*/
-.modal[id|="trabajo"]:target {
-    opacity: 1; /*La ventana modal tiene que estar con una opacidad de 0*/
+.modal[id|="trabajo"]:target { /*El selector | es para que cualquier ventana modal que en su
+    atributo id empiece con la palabra trabajo se va activar.*/
+    opacity: 1; /*La ventana modal tiene que estar con una opacidad de 1*/
     pointer-events: auto;
 }
 
@@ -313,9 +315,7 @@ progress::-moz-progress-bar {
     margin: 2rem auto;
     padding: 0.5rem 1rem;
     text-align: center;
-    color: var(--title-color)
-
-
+    color: var(--title-color);
 }
 
 .text-center {
@@ -427,6 +427,31 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
     height: 100%;
 }
 
+.portfolio-modal {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    background-color: var(--white-color);
+}
+
+.portfolio-modal h3 {
+    border-bottom: medium solid var(--first-color);
+    padding: 0.5rem 0;
+    margin: 1rem auto;
+    color: var(--title-color);
+}
+
+.portfolio-details {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-auto-rows: 2rem;
+}
+
+.portfolio-details b {
+    color: var(--first-color);
+}
+
 .certification-card {
     margin: 1rem auto;
     padding: 1rem;
@@ -444,15 +469,7 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
 
 /*Para cuando el dispositivo sea pantalla y cuando la mínima altura sea 768px*/
 @media screen and (min-width:768px) {  
-    .portfolio > .container {
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
-    }
-
-    .portfolio .section-title {
-        grid-column: span 2;
-    }
-
+    
     .certifications > .container {
         display: grid;
         grid-template-columns: repeat(2, 45%);
@@ -462,6 +479,24 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
 
     .certifications .section-title {
         grid-column: span 2; /*propiedad para hacer desplazar la clase dos celdas o la cantidad que sea.*/
+    }
+    .portfolio > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+    
+    .portfolio .section-title {
+        grid-column: span 2;
+    }
+
+   .portfolio-modal {
+    max-width: 800px;
+    flex-direction: row;
+   }
+
+    .portfolio-info {
+        margin-left: 1rem;
+        align-self: center;
     }
 }
 
