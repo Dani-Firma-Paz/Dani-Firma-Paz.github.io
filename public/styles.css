@@ -95,7 +95,15 @@ html {
 
  p {
     line-height: 1.6;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
  }
+
+
 
 
 /********* COMPONENTS ***********/
@@ -294,10 +302,10 @@ progress::-moz-progress-bar {
     margin-right: auto;
     max-width: var(--max-width);
 }
-
-/*.grey-scale {
+/*
+.grey-scale {
     filter:grayscale(1);
-}*/
+} */
 
 .none { /*La clase none está puesta en el ícono en forma de X que se utiliza para cerrar.*/
     display: none; /*Hace que desaparezca la cruz para cerrar*/
@@ -307,7 +315,6 @@ progress::-moz-progress-bar {
     padding: 2rem 1rem;
 
 }
-
 .section-title {
     border-top: thin solid var(--first-color);
     border-bottom: thin solid var(--first-color);
@@ -323,9 +330,7 @@ progress::-moz-progress-bar {
 }
 .text-left {
     text-align: left;
-
 }
-
 .text-right {
     text-align: right;
 }
@@ -469,7 +474,6 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
 
 /*Para cuando el dispositivo sea pantalla y cuando la mínima altura sea 768px*/
 @media screen and (min-width:768px) {  
-    
     .certifications > .container {
         display: grid;
         grid-template-columns: repeat(2, 45%);
@@ -480,6 +484,7 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
     .certifications .section-title {
         grid-column: span 2; /*propiedad para hacer desplazar la clase dos celdas o la cantidad que sea.*/
     }
+
     .portfolio > .container {
         display: grid;
         grid-template-columns: repeat(2, 50%);
@@ -489,15 +494,16 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
         grid-column: span 2;
     }
 
-   .portfolio-modal {
-    max-width: 800px;
-    flex-direction: row;
-   }
-
+    .portfolio-modal {
+        max-width: 800px;
+        flex-direction: row;
+    }
+    
     .portfolio-info {
         margin-left: 1rem;
         align-self: center;
     }
+
 }
 
 
