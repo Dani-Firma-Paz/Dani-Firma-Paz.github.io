@@ -365,6 +365,41 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
     margin-bottom: 2rem;
 }
 
+.certification-card {
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center; 
+}
+
+.certification-card h3 {
+    color: var(--title-color);
+}
+.certification-card svg {
+    margin-bottom: 1.25rem;
+    fill: var(--first-color);
+}
+
+.contact-card {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 100%;
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-card > svg {
+    fill: var(--first-color);
+    width: 2rem;
+    height: 2rem;
+}
+
+.contact-card > small {
+    margin-top: -1rem;
+}
+
 .header { /*En versión móvil de la página, la cabecera estará fija en la parte de abajo.*/
     position: fixed;
     left: 0;
@@ -457,18 +492,14 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
     color: var(--first-color);
 }
 
-.certification-card {
-    margin: 1rem auto;
-    padding: 1rem;
-    text-align: center; 
+.social-media a {
+    padding: 0 0.4rem;
+    text-decoration: none;
 }
 
-.certification-card h3 {
-    color: var(--title-color);
-}
-.certification-card svg {
-    margin-bottom: 1.25rem;
-    fill: var(--first-color);
+.social-media svg {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 
@@ -483,6 +514,12 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
 
     .certifications .section-title {
         grid-column: span 2; /*propiedad para hacer desplazar la clase dos celdas o la cantidad que sea.*/
+    }
+
+    .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        justify-content: space-between;
     }
 
     .portfolio > .container {
@@ -514,6 +551,11 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
         justify-content: space-between;
         align-content: center;
     }
+
+    .contact-cards {
+        grid-template-columns: repeat(4, 24%);
+    }
+
     .header {
         position: sticky; /*Es una mezcla entre el posicionamiento relativo y fijo*/
         top: 0; /*Cuando toque el top 0 se va a volver fijo*/
