@@ -400,6 +400,14 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
     margin-top: -1rem;
 }
 
+.footer {
+    margin-bottom: var(--header-height);
+    text-align: center;
+    padding: 0.5rem;
+    background-color: var(--third-color);
+    color: var(--white-color);
+}
+
 .header { /*En versión móvil de la página, la cabecera estará fija en la parte de abajo.*/
     position: fixed;
     left: 0;
@@ -554,6 +562,10 @@ veces como puedas para no repetir lo mismo. Reutilizar y no volver hacer. */
 
     .contact-cards {
         grid-template-columns: repeat(4, 24%);
+    }
+
+    .footer {
+        margin-bottom: 0;
     }
 
     .header {
