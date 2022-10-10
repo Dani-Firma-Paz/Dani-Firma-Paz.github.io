@@ -3,6 +3,4 @@
 Repositorio de la maquetación de LandingPage -  portafolio -  cv.
 
 ## Proyecto
-- [LadingPage]
- https://Dani-Firma-Paz.github.io/portafolio_cv
- website
+- [LadingPage](https://Dani-Firma-Paz.github.io/Portafolio_CV)
